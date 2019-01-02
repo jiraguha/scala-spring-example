@@ -1,0 +1,27 @@
+plugins {
+    id 'scala'
+    id 'java'
+    id 'org.springframework.boot' version '2.1.1.RELEASE'
+    id "io.spring.dependency-management" version "1.0.6.RELEASE"
+}
+
+group = 'com.example.ijp'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+
+dependencies {
+    implementation("org.scala-lang:scala-library:$scalaVersion")
+    implementation "com.fasterxml.jackson.module:jackson-module-scala_2.12"
+    implementation('org.springframework.boot:spring-boot-starter-data-mongodb-reactive')
+    implementation('org.springframework.boot:spring-boot-starter-webflux')
+    testImplementation('org.springframework.boot:spring-boot-starter-test')
+    //for test only
+    implementation('de.flapdoodle.embed:de.flapdoodle.embed.mongo')
+    testImplementation('io.projectreactor:reactor-test')
+    testImplementation('org.junit.jupiter:junit-jupiter-api')
+}
